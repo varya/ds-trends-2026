@@ -226,6 +226,60 @@
   }
   .reveal .compare li:last-child { border-bottom: none; }
 
+  /* ── Closer line ──────────────────────────── */
+  .reveal .closer {
+    font-size: 22px;
+    line-height: 1.4;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--teal);
+    margin: 32px 0 0 0;
+    padding: 14px 20px;
+    border-left: 4px solid var(--teal);
+    background: rgba(1,148,154,0.06);
+    border-radius: 0 10px 10px 0;
+    max-width: 900px;
+  }
+  .reveal .closer em { color: var(--dark); font-style: italic; }
+
+  /* ── Timeline (Slide 1) ───────────────────── */
+  .reveal .timeline {
+    margin: 28px 0 18px 0;
+    border-left: 3px solid var(--teal);
+    padding-left: 0;
+  }
+  .reveal .timeline-row {
+    display: flex;
+    align-items: baseline;
+    gap: 28px;
+    padding: 10px 0 10px 22px;
+    position: relative;
+  }
+  .reveal .timeline-row::before {
+    content: "";
+    position: absolute;
+    left: -8px; top: 18px;
+    width: 13px; height: 13px;
+    border-radius: 50%;
+    background: var(--teal);
+  }
+  .reveal .timeline-row .year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--med);
+    min-width: 70px;
+  }
+  .reveal .timeline-row .q {
+    font-size: 22px;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--dark);
+  }
+  .reveal .timeline-row.active::before { background: var(--red); }
+  .reveal .timeline-row.active .year   { color: var(--red); }
+  .reveal .timeline-row.active .q      { color: var(--red); font-weight: 600; }
+
   /* ── Bullet list ──────────────────────────── */
   .reveal ul.dotted { list-style: none; padding: 0; margin: 18px 0 0 0; max-width: 900px; }
   .reveal ul.dotted li {
@@ -278,6 +332,7 @@
     <section
       data-markdown="slides.md"
       data-separator="^\r?\n---\r?\n$"
+      data-separator-vertical="^\r?\n>>>\r?\n$"
       data-separator-notes="^Note:">
     </section>
   </div>
