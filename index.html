@@ -226,6 +226,134 @@
   }
   .reveal .compare li:last-child { border-bottom: none; }
 
+  /* ── Tier schema (3-tier tokens) ──────────── */
+  .reveal .tiers { display: flex; flex-direction: column; gap: 8px; margin: 14px 0; }
+  .reveal .tier {
+    background: var(--light);
+    border-radius: 12px;
+    padding: 12px 18px;
+    border-left: 4px solid var(--blue);
+    position: relative;
+  }
+  .reveal .tier.t2 { border-left-color: var(--teal); }
+  .reveal .tier.t3 { border-left-color: var(--red); background: rgba(219,31,72,0.06); }
+  .reveal .tier-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; font-weight: 600;
+    color: var(--blue);
+    letter-spacing: 0.06em; text-transform: uppercase;
+    display: block;
+  }
+  .reveal .tier.t2 .tier-label { color: var(--teal); }
+  .reveal .tier.t3 .tier-label { color: var(--red); }
+  .reveal .tier-title { font-size: 18px; font-weight: 700; color: var(--dark); margin: 2px 0 0 0; }
+  .reveal .tier-desc {
+    font-size: 13px; color: var(--med);
+    font-family: 'JetBrains Mono', monospace;
+    margin-top: 3px;
+  }
+  .reveal .tier-arrow { text-align: center; color: var(--med); font-size: 14px; line-height: 1; margin: 0; }
+  .reveal .tier-callout {
+    position: absolute; right: 16px; top: 14px;
+    font-size: 11px; font-weight: 700;
+    color: var(--red);
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+
+  /* ── Split layout (schema + code) ─────────── */
+  .reveal .split {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 22px;
+    margin: 14px 0;
+    align-items: start;
+  }
+
+  /* ── Code block ───────────────────────────── */
+  .reveal pre.code {
+    background: #1a1814;
+    color: #f8f7f5;
+    border-radius: 12px;
+    padding: 16px 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 1.55;
+    margin: 0;
+    white-space: pre;
+    overflow: hidden;
+    box-shadow: none;
+  }
+  .reveal pre.code .c { color: #7a8a8c; }
+  .reveal pre.code .k { color: #76d7c4; }
+  .reveal pre.code .v { color: #f5b78a; }
+  .reveal pre.code .t { color: #f4a8c1; }
+  .reveal .code-caption {
+    font-size: 14px; color: var(--med);
+    margin-top: 10px; line-height: 1.45;
+  }
+  .reveal .code-caption code {
+    font-family: 'JetBrains Mono', monospace;
+    background: rgba(1,148,154,0.08);
+    padding: 1px 6px; border-radius: 4px;
+    color: var(--teal);
+    font-size: 13px;
+  }
+
+  /* ── Pipeline schema ──────────────────────── */
+  .reveal .pipeline {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+    margin: 24px 0;
+  }
+  .reveal .pl-node {
+    flex: 1;
+    background: var(--light);
+    border-radius: 12px;
+    padding: 16px 14px;
+    text-align: center;
+    border-top: 4px solid var(--teal);
+  }
+  .reveal .pl-node.source { border-top-color: var(--blue); }
+  .reveal .pl-node.transform { border-top-color: var(--red); }
+  .reveal .pl-node h4 {
+    font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin: 0 0 6px 0; color: var(--med);
+  }
+  .reveal .pl-node .name {
+    font-size: 16px; font-weight: 700;
+    color: var(--dark);
+    line-height: 1.25;
+  }
+  .reveal .pl-node .tools {
+    font-size: 12px; color: var(--med);
+    font-family: 'JetBrains Mono', monospace;
+    margin-top: 6px; line-height: 1.45;
+  }
+  .reveal .pl-arrow {
+    flex: 0 0 24px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; color: var(--med); font-weight: 600;
+  }
+  .reveal .pl-outputs {
+    flex: 1.4;
+    background: rgba(1,148,154,0.06);
+    border-radius: 12px;
+    padding: 16px 18px;
+    border-top: 4px solid var(--teal);
+  }
+  .reveal .pl-outputs h4 {
+    font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin: 0 0 8px 0; color: var(--teal);
+  }
+  .reveal .pl-outputs ul {
+    list-style: none; padding: 0; margin: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px; color: var(--dark); line-height: 1.7;
+  }
+
   /* ── Closer line ──────────────────────────── */
   .reveal .closer {
     font-size: 22px;
@@ -315,7 +443,7 @@
     font-size: 22px;
     color: var(--med);
     max-width: 720px;
-    margin: 0 0 40px 0;
+    margin: 0 auto 40px auto;
   }
   .reveal .closing-contact {
     font-size: 18px;
